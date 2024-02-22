@@ -23,5 +23,9 @@ Personaliza el efecto a tu gusto:
 
 <p align="center">Experimenta y personaliza para hacer que tu sitio destaque con este efecto visual único.</p>
 
-[![Así se ve]([https://example.com/path/to/image.jpg](https://raw.githubusercontent.com/federicogzc/Tittle_Ring_light_effect/main/2024-02-22T12_10_08.png))]([https://youtube.com/watch?v=videoID](https://www.youtube.com/watch?v=4XWq71b1cZk)https://www.youtube.com/watch?v=4XWq71b1cZk "Ring-light")
+https://github.com/federicogzc/Tittle_Ring_light_effect/blob/559942306286c76646789669d5e65bc63bf206f6/2024-02-22T12_10_08.png
+
+[![Nombre del Video](https://github.com/federicogzc/Tittle_Ring_light_effect/blob/559942306286c76646789669d5e65bc63bf206f6/2024-02-22T12_10_08.png
+)]( https://www.youtube.com/watch?v=4XWq71b1cZk "Título del Video")
+
 
