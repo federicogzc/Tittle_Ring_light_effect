@@ -22,3 +22,6 @@ Personaliza el efecto a tu gusto:
 - **Opacidad y Color de Fondo:** Modifica `opacity` y `background-color` en `.circle` para alterar la visibilidad y el color de fondo.
 
 <p align="center">Experimenta y personaliza para hacer que tu sitio destaque con este efecto visual único.</p>
+
+[![Así se ve](https://example.com/path/to/image.jpg)]([https://youtube.com/watch?v=videoID](https://www.youtube.com/watch?v=4XWq71b1cZk)https://www.youtube.com/watch?v=4XWq71b1cZk "Título del Video")
+
