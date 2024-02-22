@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Sitio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* Fondo oscuro para efecto misterioso */
+            overflow: hidden; /* Asegurarse de que no haya desbordamiento de la pantalla */
+            margin: 0; /* Remover margen por defecto */
+            height: 100vh; /* Altura completa de la ventana */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .cover {
+            position: relative;
+            padding: 0 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            color: #1e19b1; /* Cambiado a blanco para mejor contraste */
+            margin: 0; /* Ajuste del margen */
+            font-size: 2em; /* Ajuste del tamaño de la fuente */
+            animation: heartbeat 2s infinite; /* Animación de palpitar */
+            -webkit-text-stroke: 1px #000000; /*Borde navegadores que soportan esta propiedad*/
+            text-shadow: 
+                3px 3px 0px #0600b4, /*Sonbra hacia la derecha y abajo*/
+                -1px -1px 0px #0600b4, /*Sombra hacia la izquierda y arriba */
+                -2px 2px 0px #0600b4, /* Sombra hacia la izquierda y abajo */
+                2px -2px 0px #0600b4, /* Sombra hacia la derecha y arriba */
+                0px -3px 4px rgba(1, 0, 38, 0.81); /* Sombra interna más sutil en la parte superior */
+            transition: color 0.3s; /* Suaviza el cambio de color */
+            position: relative; /* Asegura que ::before se posicione relativo a h1 */
+        }
+        h1:hover::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: calc(100vmin - 20px); /* Se ajusta para tener en cuenta el ancho del borde */
+            height: calc(100vmin - 20px); /* Se ajusta para tener en cuenta el ancho del borde */
+            border: 10px solid #0600b4; /* Borde azul */
+            border-radius: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%) scale(0);
+            animation: pulse-wave 13s infinite cubic-bezier(0.24, 0, 0.38, 1);
+            opacity: 0.7;
+            background-color: transparent; /* Fondo transparente */
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(255, 255, 255); /* Texto claro */
+            position: absolute;
+            bottom: 10px; /* Ubicación al pie de la página */
+            width: 100%; /* Ajuste de ancho */
+        }
+        .circle {
+            position: absolute;
+            width: calc(100vmin - 20px);
+            height: calc(100vmin - 20px);
+            border: 10px solid #0600b4;
+            border-radius: 50%;
+            z-index: -1;
+            transform: scale(0);
+            opacity: 0.7;
+            background-color: transparent;
+            transition: transform 0.5s, opacity 0.5s;
+        }
+        /* Animación de palpitar */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Animación de onda de luz */
+        @keyframes pulse-wave {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(10);
+                opacity: 0;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+<div class="cover">
+    <h1>I'm Frederick.</h1>
+    <!-- Aquí puedes añadir más contenido HTML como necesites -->
+</div>
+
+<div class="footer">
+    <!-- Contenido del pie de página -->
+    This is my website, feel free to investigate my work :D
+</div>
+<script>
+    // Función para crear un círculo
+    function createCircle(e) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+        circle.style.top = e.clientY + 'px';
+        circle.style.left = e.clientX + 'px';
+        document.body.appendChild(circle);
+        
+        // Añadir animación
+        circle.style.transform = 'translate(-50%, -50%) scale(10)';
+        circle.style.opacity = '0';
+
+        // Remover círculo después de que termine la animación
+        circle.addEventListener('transitionend', function() {
+            circle.remove();
+        });
+    }
+    
+    // Añadir listener al título para crear círculos
+    document.getElementById('title').addEventListener('mouseover', createCircle);
+</script>
+
+</body>
+</html>
